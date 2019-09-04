@@ -260,6 +260,7 @@ final public class ShimmeringLayer: CALayer {
                 maskLayer.add(repeatAnimation, forKey: Shimmer.Key.slideAnimation)
             } else {
                 let slideAnimation = Shimmer.slideAnimation(duration: animationDuration, direction: shimmerDirection)
+              print("direction: \(shimmerDirection)")
                 slideAnimation.fillMode = .forwards
                 slideAnimation.isRemovedOnCompletion = false
                 if shimmerBeginTime == shimmerDefaultBeginTime {
