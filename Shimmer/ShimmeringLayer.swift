@@ -187,8 +187,9 @@ final public class ShimmeringLayer: CALayer {
             maskLayer?.position = CGPoint(x: 0, y: -travelDistance)
             maskLayer?.bounds = CGRect(x: 0, y: 0, width: content.bounds.width, height: fullShimmerLength)
         } else {
-            maskLayer?.startPoint = CGPoint(x: startPoint, y: 0)
-            maskLayer?.endPoint = CGPoint(x: endPoint, y: 0)
+            maskLayer?.startPoint = CGPoint(x: 0, y: 0)
+          // changed
+            maskLayer?.endPoint = CGPoint(x: -100, y: 100)
             maskLayer?.position = CGPoint(x: -travelDistance, y: 0)
             maskLayer?.bounds = CGRect(x: 0, y: 0, width: fullShimmerLength, height: content.bounds.height)
         }
@@ -251,7 +252,7 @@ final public class ShimmeringLayer: CALayer {
                 dir = shimmerDirection
             } else {
                 length = contentLayer?.bounds.width ?? 0
-              dir = shimmerDirection
+                dir = shimmerDirection
             }
 
             let animationDuration: CFTimeInterval = Double((length / shimmerSpeed)) + shimmerPauseDuration
