@@ -187,9 +187,8 @@ final public class ShimmeringLayer: CALayer {
             maskLayer?.position = CGPoint(x: 0, y: -travelDistance)
             maskLayer?.bounds = CGRect(x: 0, y: 0, width: content.bounds.width, height: fullShimmerLength)
         } else {
-            maskLayer?.startPoint = CGPoint(x: 0, y: 0)
-          // changed
-            maskLayer?.endPoint = CGPoint(x: -100, y: 100)
+            maskLayer?.startPoint = CGPoint(x: startPoint, y: 0)
+            maskLayer?.endPoint = CGPoint(x: endPoint, y: 0)
             maskLayer?.position = CGPoint(x: -travelDistance, y: 0)
             maskLayer?.bounds = CGRect(x: 0, y: 0, width: fullShimmerLength, height: content.bounds.height)
         }
@@ -246,13 +245,10 @@ final public class ShimmeringLayer: CALayer {
             }
 
             var length: CGFloat = 0.0
-            var dir: Shimmer.Direction = .right
             if shimmerDirection == .down || shimmerDirection == .up {
                 length = contentLayer?.bounds.height ?? 0
-                dir = shimmerDirection
             } else {
                 length = contentLayer?.bounds.width ?? 0
-                dir = shimmerDirection
             }
 
             let animationDuration: CFTimeInterval = Double((length / shimmerSpeed)) + shimmerPauseDuration
@@ -264,7 +260,6 @@ final public class ShimmeringLayer: CALayer {
                 maskLayer.add(repeatAnimation, forKey: Shimmer.Key.slideAnimation)
             } else {
                 let slideAnimation = Shimmer.slideAnimation(duration: animationDuration, direction: shimmerDirection)
-              print("direction: \(shimmerDirection)")
                 slideAnimation.fillMode = .forwards
                 slideAnimation.isRemovedOnCompletion = false
                 if shimmerBeginTime == shimmerDefaultBeginTime {
