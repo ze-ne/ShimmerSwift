@@ -245,10 +245,13 @@ final public class ShimmeringLayer: CALayer {
             }
 
             var length: CGFloat = 0.0
+            var dir: Shimmer.Direction = .right
             if shimmerDirection == .down || shimmerDirection == .up {
                 length = contentLayer?.bounds.height ?? 0
+                dir = shimmerDirection
             } else {
                 length = contentLayer?.bounds.width ?? 0
+              dir = shimmerDirection
             }
 
             let animationDuration: CFTimeInterval = Double((length / shimmerSpeed)) + shimmerPauseDuration
