@@ -67,7 +67,7 @@ final public class ShimmeringView: UIView {
     /// The direction of the shimmer animation.
     /// Defaults to `.right`, which will run the animation from left to right.
     public var shimmerDirection: Shimmer.Direction = .right {
-        didSet { shimmerLayer?.updateShimmering() }
+        didSet { shimmerLayer?.shimmerDirection = shimmerDirection }
     }
 
     /// The time interval between shimmers in seconds.
