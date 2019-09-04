@@ -66,6 +66,7 @@ final public class Shimmer {
         if direction == .left || direction == .up {
             animation.speed = -fabsf(animation.speed)
         }
+        print(direction)
         return animation
     }
 
