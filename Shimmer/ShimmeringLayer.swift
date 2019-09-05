@@ -160,7 +160,7 @@ final public class ShimmeringLayer: CALayer {
         guard let content = contentLayer else { return }
 
         var length: CGFloat = 0.0
-        if shimmerDirection == .down || shimmerDirection == .up {
+        if shimmerDirection == .down || shimmerDirection == .up || shimmerDirection == .bottomLeftToTopRight {
             length = content.bounds.height
         } else {
             length = content.bounds.width
@@ -187,7 +187,7 @@ final public class ShimmeringLayer: CALayer {
             maskLayer?.position = CGPoint(x: 0, y: -travelDistance)
             maskLayer?.bounds = CGRect(x: 0, y: 0, width: content.bounds.width, height: fullShimmerLength)
         } else if shimmerDirection == .bottomLeftToTopRight {
-            maskLayer?.startPoint = CGPoint(x: startPoint, y: startPoint)
+            maskLayer?.startPoint = CGPoint(x: 0, y: 0)
             maskLayer?.endPoint = CGPoint(x: endPoint, y: endPoint)
             maskLayer?.position = CGPoint(x: 0, y: -travelDistance)
             maskLayer?.bounds = CGRect(x: 0, y: 0, width: content.bounds.width, height: fullShimmerLength)
