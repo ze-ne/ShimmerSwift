@@ -41,6 +41,7 @@ final public class Shimmer {
         case up
         case down
         case bottomLeftToTopRight
+        case bottomRightToTopLeft
     }
 
     struct Key {
@@ -64,7 +65,7 @@ final public class Shimmer {
         animation.toValue = NSValue(cgPoint: .zero)
         animation.duration = duration
         animation.repeatCount = .greatestFiniteMagnitude
-        if direction == .left || direction == .up {
+        if direction == .left || direction == .up || direction == .bottomRightToTopLeft {
             animation.speed = -fabsf(animation.speed)
         }
         return animation
