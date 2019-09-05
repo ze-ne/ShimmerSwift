@@ -40,7 +40,7 @@ final public class Shimmer {
         case left
         case up
         case down
-        //case bottomLeftToTopRight
+        case bottomLeftToTopRight
     }
 
     struct Key {
