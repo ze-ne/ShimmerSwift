@@ -120,7 +120,7 @@ final public class ShimmeringView: UIView {
         super.init(coder: aDecoder)
     }
 
-    private var shimmerLayer: ShimmeringLayer? {
+    public var shimmerLayer: ShimmeringLayer? {
         return (layer as? ShimmeringLayer)
     }
 
