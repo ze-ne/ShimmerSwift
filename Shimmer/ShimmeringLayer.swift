@@ -189,7 +189,7 @@ final public class ShimmeringLayer: CALayer {
         } else if shimmerDirection == .bottomLeftToTopRight {
             maskLayer?.startPoint = CGPoint(x: 0, y: 0)
             maskLayer?.endPoint = CGPoint(x: endPoint, y: endPoint)
-            maskLayer?.position = CGPoint(x: 0, y: 0)
+            maskLayer?.position = CGPoint(x: 0, y: -travelDistance)
             maskLayer?.bounds = CGRect(x: 0, y: 0, width: content.bounds.width, height: fullShimmerLength)
         } else {
             maskLayer?.startPoint = CGPoint(x: startPoint, y: 0)
