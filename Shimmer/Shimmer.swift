@@ -65,7 +65,7 @@ final public class Shimmer {
         animation.toValue = NSValue(cgPoint: .zero)
         animation.duration = duration
         animation.repeatCount = .greatestFiniteMagnitude
-        if direction == .left || direction == .up || direction == .bottomRightToTopLeft {
+        if direction == .left || direction == .up {
             animation.speed = -fabsf(animation.speed)
         }
         return animation
