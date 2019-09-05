@@ -92,7 +92,7 @@ final public class ShimmeringLayer: CALayer {
 
     private var maskLayer: ShimmeringMaskLayer?
 
-    override init() {
+    override public init() {
         super.init()
     }
 
