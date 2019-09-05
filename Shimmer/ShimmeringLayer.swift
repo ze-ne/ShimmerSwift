@@ -160,7 +160,7 @@ final public class ShimmeringLayer: CALayer {
         guard let content = contentLayer else { return }
 
         var length: CGFloat = 0.0
-        if shimmerDirection == .down || shimmerDirection == .up || shimmerDirection == .bottomLeftToTopRight {
+        if shimmerDirection == .down || shimmerDirection == .up {
             length = content.bounds.height
         } else {
             length = content.bounds.width
